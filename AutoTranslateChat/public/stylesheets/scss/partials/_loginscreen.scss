@@ -1,0 +1,55 @@
+$color-bgbuttons: #0d9fbe;
+$color-border: #0dbebe;
+$margin-center: 0 auto;
+
+@mixin border-radius($radius) { 
+ -webkit-border-radius: $radius; 
+ -moz-border-radius: $radius; 
+ -ms-border-radius: $radius; 
+ border-radius: $radius; 
+}
+
+@mixin animation-fill($direction) { 
+  -webkit-animation-fill-mode: $direction;
+  -moz-animation-fill-mode: $direction;
+  -ms-animation-fill-mode: $direction;
+  -o-animation-fill-mode: $direction;
+  animation-fill-mode: $direction;
+}
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+.bigbutton
+{
+  background-color: $color-bgbuttons;
+  width: 120px;
+  height: 85px;
+  color: white;
+  display: block;
+  text-decoration:none;
+  text-align: center;
+  @include border-radius(60px);
+  @include font-size(1.1); 
+  margin: $margin-center;
+  margin-top: 30px;
+  border: 2px solid $color-border;
+
+  padding-top: 35px;
+}
+
+.bigbutton:hover
+{
+  background-color: $color-border;
+  border: 2px solid $color-bgbuttons;
+}
+
+#login
+{
+  a
+  {
+    @extend .bigbutton;
+  }
+}

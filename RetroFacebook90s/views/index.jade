@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  #content
+    #header
+      h1 Welcome to #{title} '91
+      h2 Tom's Profile
+      h3 0 friends
+    #sidebarleft
+      .profilepic
+      .navbar
+        ul.nav
+          li
+            a(href="#") News Bulletin
+          li
+            input(type="text", name="search" id="search" placeholder="search")
+          li.active
+            a(href="#") Telegrams
+          li
+            a(href="#") Tom's Visage
+          li
+            a(href="#") Photo Collection  
+          li.active
+            a(href="#") Poke friend (new!)
+          li
+            a(href="#") Tom's Visage  
+    #contentwrap
+      h2#bulletintitle News Bulletin
+      .bulletin
+      .sendwrap
+        h3 Add to news bulletin.
+        ul.sendbox
+          li
+            label(for="user") Post as:
+            br
+            input(id="user" type="text" name="user" placeholder="your name")
+          li
+            label(for="question") Message:
+            br
+            textarea(id="question" type="text" placeholder="your message" maxlength="100")
+          li
+            p.error
+          li
+            input(id="send" type="submit" value="Post")
+    #sidebarright
+      ul.ads
+        li#adone
+        li#adfour
+        li#adfive
+        li#adtwo
+        li#adthree

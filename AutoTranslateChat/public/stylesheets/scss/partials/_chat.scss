@@ -1,0 +1,85 @@
+@import 'partials/loginscreen';
+
+.bulletin
+{
+	width: 100%;
+	height: 300px;
+	overflow:scroll;
+	padding-top: 40px;
+	padding-left: 13px;
+	margin-bottom: 30px;
+
+	.chatPIC
+	{
+		width: 30px;
+		height: 30px;
+		@include border-radius(60px);
+		border: 2px solid $color-border;
+		top: 0;
+
+		-webkit-animation: post 1s;
+		-ms-animation: post 1s;
+		animation: post 1s;
+
+		@include animation-fill(forwards);
+	}
+
+	.chatpost
+	{
+		width: 75.8%;
+		background-color: white;
+		display: inline-block;
+		word-break: normal;
+		vertical-align: top;
+		margin-top: 0px;
+		margin-left: 10px;
+		
+		padding: 8px 0px;
+		padding-left: 10px;
+
+		-webkit-animation: post 1s;
+		-ms-animation: post 1s;
+		animation: post 1s;
+
+		@include animation-fill(forwards);
+	}
+}
+
+@-webkit-keyframes post
+{
+	0% {
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+   	   } 
+    
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+}
+
+.sendbox
+{
+	width: 95%;
+
+		#send
+		{
+			width: 30px;
+			height: 30px;
+  			text-decoration:none;
+  			text-align: center;
+  			@include border-radius(60px);
+  			@include font-size(1.1); 
+  			border: 2px solid $color-border;
+  			margin-right: 10px;
+  			margin-left: 13px;
+		}
+
+		#message
+		{
+		 	width: 82%;
+		 	height: 23px;
+		 	border-color: $color-border;
+		}
+	
+}

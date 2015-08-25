@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ela - Chat with people across the world</title>
+	<meta name="description" content="Ela is a prototye chat app that allows people to chat across the world. Ela is able to translate your messages.">
+	<link rel="icon" type="image/png" href="/stylesheets/assets/logos/ela_thumb.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="tommoore.be">
+	<link type="text/css" re="stylesheet" href="/stylesheets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/lib/msdropdown/dd.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/lib/msdropdown/flags.css">
+	<link type="text/css" rel="stylesheet" href="/stylesheets/css/style.css">
+</head>
+
+<body>	
+<% if (!user) { %>
+	<h2>redirecting...</h2>
+	<a href="/">Manualy go to login page</a>
+<% } else { %>
+	<div id="profile">
+		<div id="profcontainer">
+			<h3>Your user profile</h3>
+			<p>Your ID: <span id="userID"><%= user.id %></span></p>
+			<p>Name: <span id="userName"><%= user.displayName %></span></p>
+			<p>Location: <span id="location"></span></p>
+			<p>My Language: 
+
+	<select id="langBox" name="sl" size="1">
+      <option value="en" selected="selected">English</option><option value="nl">Dutch</option><option value="de">German</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="ca">Catalan</option><option value="zh-CN">Chinese</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="el">Greek</option><option value="ht">Haitian Creole</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="ko">Korean</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="ms">Malay</option><option value="mt">Maltese</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="es">Spanish</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option></select>
+
+			</p>
+			<figure>
+				<img src="https://graph.facebook.com/<%= user.id %>/picture?type=large" alt="" id="profilepic">
+			</figure>
+		</div>
+	</div>
+
+<div class="site-container">
+	<header>
+		<nav>
+		<ul>
+			<li>
+				<a href="#" id="account">&#9776;</a>
+				<a href="/" id="logosmall">Ela</a>
+			</li>
+			<li>
+				<a href="/logout" id="logout">Log Out</a>	
+			</li>
+		</ul>
+		</nav>
+	</header>
+
+	<div class="bulletin">
+		
+	</div>
+	<div class="sendbox">
+		<input id="send" type="submit" value="&#128172;">
+		<input id="message" type="text" placeholder="write a message...">
+	</div>
+</div>
+
+<% } %>
+
+<script src="/javascripts/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="/javascripts/modernizr.js"></script>
+<script src="/javascripts/script.js" type="text/javascript"></script>
+<script src="/javascripts/prototype.js" type="text/javascript"></script>
+<script src="/javascripts/faye/browser/faye-browser.js" type="text/javascript"></script>
+<script src="/javascripts/chat.js" type="text/javascript"></script>
+
+</body>
+</html>

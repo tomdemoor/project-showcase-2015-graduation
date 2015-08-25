@@ -1,0 +1,34 @@
+@import 'partials/loginscreen';
+@import 'partials/header';
+
+$margin-center: 0px auto;
+
+#countrywrap
+{
+	margin: $margin-center;
+	padding-top: 40px;
+	text-align: center;
+
+	#countries
+	{
+		width: 90%;
+	}
+}
+
+#expl
+{
+	margin-top: 61px;	
+}
+
+#connectme
+{
+	@extend #login;
+
+	margin-top: 70px;
+
+	a
+	{
+		@extend .links;
+		color:white;
+	}
+}
